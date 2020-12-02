@@ -13,18 +13,13 @@ export default {
   props: {
     colorData: Object
   },
-  data: () => {
-    return {
-      colorData: false
-    }
-  },
   methods: {
     changeSay () {
       this.say = 'Hello John!'
     }
   }
 }
-</script>>
+</script>
 
 <style lang="scss">
 
@@ -38,6 +33,14 @@ export default {
   padding: 5px;
   border-radius: 10px;
   background-color: rgb(201, 201, 201);
+  cursor: pointer;
+  transition-property: all;
+  transition-property: transform;
+  transition-duration: 0.5s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   .color-name {
     font-size: 18px;

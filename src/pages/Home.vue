@@ -4,12 +4,6 @@
       <h1>Colorify</h1>
     </header>
     <ColorsGrid />
-    <footer class="footer">
-      <div class="color-paginator">
-        <button>Prev</button>
-        <button>Next</button>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -39,15 +33,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-.footer {
-  padding: 15px;
-
-  .color-paginator {
-    display: flex;
-    justify-content: space-between;
-  }
-}
 
 .page-header {
   text-align: center;
