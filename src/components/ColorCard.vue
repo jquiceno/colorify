@@ -25,6 +25,9 @@ export default {
     handlerClickColor (colorData) {
       this.copying = true
       copy(colorData.color)
+
+      this.$emit('onColorCopy', colorData)
+
       setTimeout(() => {
         this.copying = false
       }, 800)

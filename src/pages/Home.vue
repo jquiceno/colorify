@@ -1,9 +1,9 @@
 <template>
   <div class="main-container container-fluid">
     <header class="page-header">
-      <h1>Colorify</h1>
+      <h1 :style="{ color: titleColor }" >Colorify</h1>
     </header>
-    <ColorsGrid />
+    <ColorsGrid @onColorCopy="handlerColorCopy" />
   </div>
 </template>
 
@@ -16,12 +16,12 @@ export default {
   },
   data: () => {
     return {
-      say: 'Hello World!'
+      titleColor: false
     }
   },
   methods: {
-    changeSay () {
-      this.say = 'Hello John!'
+    handlerColorCopy (colorData) {
+      this.titleColor = colorData.color
     }
   },
   mounted () {

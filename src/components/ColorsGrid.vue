@@ -2,7 +2,7 @@
   <fragment>
     <div class="row colors-grid" >
         <div class="col-md-4 col-sm-1" v-for="(color, key) in colors" :key="key" >
-          <ColorCard :colorData="color"  />
+          <ColorCard @onColorCopy="handlerColorCopy" :colorData="color"  />
         </div>
     </div>
     <div>
@@ -42,6 +42,9 @@ export default {
     }
   },
   methods: {
+    handlerColorCopy (colorData) {
+      this.$emit('onColorCopy', colorData)
+    },
     changePage (direction = 'next') {
       if (direction === 'next') {
         this.currentPage++
