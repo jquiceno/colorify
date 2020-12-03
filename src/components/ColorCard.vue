@@ -1,21 +1,33 @@
 <template>
-  <div class="color-card" :style="{ backgroundColor: colorData.color }">
-    <span class="color-date" >{{ colorData.year }}</span>
-      <h2 class="color-name" >{{ colorData.name }}</h2>
-      <h3 class="color-code"> {{ colorData.color }} </h3>
-    <span class="color-any" >{{ colorData.pantone_value }}</span>
+  <div class="color-card" @click="handlerClickColor(colorData)" :style="{ backgroundColor: colorData.color }">
+    <span class="color-date" ><font-awesome-icon :icon="['far', 'calendar']" /> {{ colorData.year }}</span>
+    <h2 v-if="!copying" class="color-name" >{{ colorData.name }}</h2>
+    <h3 v-if="!copying" class="color-code"> {{ colorData.color }} </h3>
+    <h3 v-if="copying" class="copy-message"> <font-awesome-icon :icon="['far', 'clipboard']" /> Color copied! </h3>
+    <span class="color-pantone" > {{ colorData.pantone_value }}</span>
   </div>
 </template>
 
 <script>
 
+import copy from 'copy-to-clipboard'
+
 export default {
   props: {
     colorData: Object
   },
+  data () {
+    return {
+      copying: false
+    }
+  },
   methods: {
-    changeSay () {
-      this.say = 'Hello John!'
+    handlerClickColor (colorData) {
+      this.copying = true
+      copy(colorData.color)
+      setTimeout(() => {
+        this.copying = false
+      }, 800)
     }
   }
 }
@@ -59,7 +71,7 @@ export default {
     font-size: 14px;
   }
 
-  .color-any {
+  .color-pantone {
     position: absolute;
     bottom: 0;
     right: 5px;

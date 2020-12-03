@@ -13,10 +13,10 @@
       <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item">
-          <button :disabled="currentPage <= 1" v-on:click="changePage('prev')" class="page-link" href="#">Previous</button>
+          <button :disabled="currentPage <= 1" v-on:click="changePage('prev')" class="page-link" href="#"><font-awesome-icon icon="chevron-left" /></button>
         </li>
         <li class="page-item">
-          <button :disabled="currentPage === totalPages" v-on:click="changePage()" class="page-link" href="#">Next</button>
+          <button :disabled="currentPage === totalPages" v-on:click="changePage()" class="page-link" href="#"><font-awesome-icon icon="chevron-right" /></button>
         </li>
       </ul>
     </nav>
