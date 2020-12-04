@@ -1,4 +1,28 @@
-# colorify
+# Colorify
+
+**Colorify**, an application to find your favorite colors and save them easily
+
+![alt text](./screen.png)
+
+## Demo 
+
+### Firebase Hosting
+
+https://jquiceno-d72f6.web.app/
+
+### Netlify
+
+https://jquiceno-colorify.netlify.app/
+
+## Resources
+
+- Npm
+- VueJs
+- Sass
+- Babel
+- Bootstrap
+- Fortawesome
+- ESlint
 
 ## Project setup
 ```
@@ -19,6 +43,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
